@@ -1,0 +1,43 @@
+@(title: String)(content: Html)
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content='text/html; charset=utf-8' http-equiv='content-type' />
+    <title>@title — RoomNet</title>
+    <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/main.css")">
+    <link rel="shortcut icon" type="image/png" href='@routes.Assets.at("images/roomnet.png")'>
+    <script src='@routes.Assets.at("javascripts/jquery-1.7.1.min.js")' type="text/javascript"></script>
+</head>
+<body>
+<div class='wrapper'>
+    <header>
+        <div class='logo'><a href="/"><img alt="" height="70" src='@routes.Assets.at("images/roomnet.png")' width="70" /></a></div>
+        <div class='header_wrapper'>
+            <h1><a href="/">RoomNet</a></h1>
+            <nav>
+                <span class='nav_item'><a href="/">Раз</a></span>
+                <span class='nav_item'><a href="/">Два</a></span>
+                <span class='nav_item'><a href="/">Три</a></span>
+            </nav>
+        </div>
+    </header>
+    <h2>@title</h2>
+    <section>
+        <!-- TODO: flash messages -->
+        <!-- TODO: two-column design -->
+        <div class='single_column'>
+            @content
+        </div>
+    </section>
+    <footer>
+        <p>
+            © 2012
+            <a href="http://github.com/NIA">NIA</a> &
+            <a href="http://github.com/cypok">cypok</a>
+        </p>
+    </footer>
+</div>
+</body>
+</html>
+
