@@ -1,0 +1,20 @@
+@(messages: List[Message], messageForm: Form[Message])
+
+@import helper._
+
+@main("Доска сообщений") {
+    <div class='welcome-text'>
+        <p>Добро пожаловать в RoomNet, домашний сервер.</p>
+    </div>
+
+    <h3>Сообщения</h3>
+
+    @form(routes.Board.createMessage(), 'class -> "newmessage" ) {
+        @inputText(messageForm("text"), 'label -> "Новое сообщение")
+        <input type="submit" value="Добавить">
+    }
+
+    <ul class="messages">
+        @messages.map { message => @views.html.board.item(message) }
+    </ul>
+}
