@@ -5,7 +5,7 @@
 <li>
     <div class="header">
         #@message.id
-        @helpers.TextHelper.formatTimestamp(message.getCreatedAt())
+        @helpers.TextHelper.formatTimestamp( message.getCreatedAt )
 
         @form(routes.Board.deleteMessage(message.id)) {
             <input type="submit" value="Delete">

@@ -9,7 +9,7 @@
 
     <h3>Сообщения</h3>
 
-    @form(routes.Board.createMessage(), 'class -> "newmessage" ) {
+    @form(routes.Board.createMessage, 'class -> "newmessage" ) {
         @inputText(messageForm("text"))
         <input type="submit" value="Добавить">
     }
