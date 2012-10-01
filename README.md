@@ -46,6 +46,13 @@ javax.persistence...
 
 6. Разбить бутылку шампанского о корпус компьютера. Большого плавания!
 
+Как запустить тесты
+-------------------
+
+В командной строке из папки с проектом выполнить
+
+    play test
+
   [JDK]: http://www.oracle.com/technetwork/java/javase/downloads/index.html
   [Play Framework]: http://www.playframework.org/download
   [MySQL]: http://dev.mysql.com/downloads
