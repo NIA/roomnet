@@ -232,3 +232,7 @@ dd .digit img {
   /*border-bottom: 1px solid #999999;*/
   margin-bottom: 15px;
 }
+
+form.delete_button {
+  display: inline;
+}

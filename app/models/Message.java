@@ -23,7 +23,7 @@ public class Message extends Model {
     public static Finder<Long,Message> find = new Finder<>(Long.class, Message.class);
 
     public static List<Message> all() {
-        return find.all();
+        return find.orderBy("createdAt DESC").findList();
     }
 
     @Override

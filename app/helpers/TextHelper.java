@@ -13,4 +13,8 @@ public class TextHelper {
             return "[no date]";
         }
     }
+
+    public static String formatMultiLineText(String text) {
+        return text.replace("\n", "<br/>\n");
+    }
 }

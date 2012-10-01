@@ -7,10 +7,10 @@
         #@message.id
         @helpers.TextHelper.formatTimestamp( message.getCreatedAt )
 
-        @form(routes.Board.deleteMessage(message.id)) {
+        @form(routes.Board.deleteMessage(message.id), 'class -> "delete_button") {
             <input type="submit" value="Delete">
         }
     </div>
-    <span class="text">@message.text</span>
+    <span class="text">@Html(helpers.TextHelper.formatMultiLineText( message.text ))</span>
 
 </li>
