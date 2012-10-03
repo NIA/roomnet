@@ -15,6 +15,14 @@
         <div class='logo'><a href="/"><img alt="" height="70" src='@routes.Assets.at("images/roomnet.png")' width="70" /></a></div>
         <div class='header_wrapper'>
             <h1><a href="/">RoomNet</a></h1>
+            <div class='account-panel'>
+                @if(helpers.AuthHelper.currentUser != null) {
+                    Вы вошли как <span class='user'>@helpers.AuthHelper.currentUser.login</span>.
+                    <a href='@routes.Application.logout'>Выйти</a>
+                } else {
+                    <a href='@routes.Application.login'>Войти</a>
+                }
+            </div>
             <nav>
                 <span class='nav_item'><a href="/">Раз</a></span>
                 <span class='nav_item'><a href="/">Два</a></span>
@@ -24,7 +32,17 @@
     </header>
     <h2>@title</h2>
     <section>
-        <!-- TODO: flash messages -->
+        <!-- TODO: better flash messages -->
+        @if(flash.contains("success")) {
+            <div class='flash_messages success'>
+                <p>@flash.get("success")</p>
+            </div>
+        }
+        @if(flash.contains("alert")) {
+            <div class='flash_messages alert'>
+                <p>@flash.get("alert")</p>
+            </div>
+        }
         <!-- TODO: two-column design -->
         <div class='single_column'>
             @content

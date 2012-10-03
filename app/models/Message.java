@@ -17,13 +17,21 @@ public class Message extends Model {
     @Required
     public String text;
 
+    @ManyToOne
+    public User author;
+
     private Date createdAt;
     public Date getCreatedAt() { return createdAt; }
 
     public static Finder<Long,Message> find = new Finder<>(Long.class, Message.class);
 
     public static List<Message> all() {
-        return find.orderBy("createdAt DESC").findList();
+        List<Message> all = find.orderBy("createdAt DESC").findList();
+        // TODO: why the user data is incorrect without it?
+        for(Message m : all) {
+            m.author.refresh();
+        }
+        return all;
     }
 
     @Override

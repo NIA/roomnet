@@ -1,1 +1,7 @@
-text=New Message
+text = Text
+login = Login
+password = Password
+logged_in = Successfully logged in as {0}
+logged_out = Successfully logged out
+invalid_login = Invalid login or password
+

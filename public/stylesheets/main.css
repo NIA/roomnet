@@ -186,7 +186,7 @@ dt {
   -moz-border-radius: 5px;
   border-radius: 5px;
 }
-.flash_messages.notice { background-color: #E6E6FF; }
+.flash_messages.success { background-color: #E6E6FF; }
 .flash_messages.alert { background-color: #FFE6E6; }
 .flash_messages p { margin: 5px 0; }
 
@@ -235,4 +235,13 @@ dd .digit img {
 
 form.delete_button {
   display: inline;
+}
+
+.user {
+    font-weight: bold;
+}
+
+.date {
+    color: #666688;
+    font-style: italic;
 }

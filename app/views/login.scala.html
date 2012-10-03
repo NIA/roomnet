@@ -1,0 +1,20 @@
+@(loginForm: Form[Application.Login])
+
+@import helper._
+
+@main("Вход") {
+    @form(routes.Application.authenticate) {
+
+        @if(loginForm.hasGlobalErrors) {
+            <p class="error">
+                @loginForm.globalError.message
+            </p>
+        }
+
+        @inputText(loginForm("login"))
+        @inputPassword(loginForm("password"))
+        <button type="submit">Войти</button>
+
+    }
+}
+

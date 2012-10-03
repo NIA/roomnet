@@ -1,18 +1,18 @@
 package controllers;
 
-import models.Message;
+import models.*;
 import play.*;
 import play.mvc.*;
 import play.data.Form;
 
 import views.html.board.*;
 
-import java.util.Date;
-
+@Security.Authenticated(Secured.class)
 public class Board extends Controller {
 
     static private Form<Message> messageForm = form(Message.class);
 
+    // TODO: make this action accessible for not logged in (but hide form)
     public static Result index() {
         return ok(index.render(Message.all(), messageForm));
     }
@@ -24,7 +24,9 @@ public class Board extends Controller {
                     views.html.board.index.render(Message.all(), filledForm)
             );
         } else {
-            filledForm.get().save();
+            Message m = filledForm.get();
+            m.author = Secured.currentUser(session());
+            m.save();
             return redirect(routes.Board.index());
         }
     }

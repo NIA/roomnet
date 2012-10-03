@@ -4,6 +4,13 @@
 
 # Home page
 GET     /                           controllers.Application.index()
+
+# Authentication
+GET     /login                      controllers.Application.login()
+POST    /login                      controllers.Application.authenticate()
+GET     /logout                     controllers.Application.logout()
+
+# Message board
 GET     /board                      controllers.Board.index()
 POST    /board                      controllers.Board.createMessage()
 POST    /board/:id/delete           controllers.Board.deleteMessage(id: Long)

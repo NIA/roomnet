@@ -1,0 +1,16 @@
+# Users
+
+users:
+
+    - !!models.User
+        login:      admin
+        password:   topsecret
+    
+    - !!models.User
+        login:      NIA
+        password:   secret
+    
+    - !!models.User
+        login:      Novator
+        password:   secret
+    

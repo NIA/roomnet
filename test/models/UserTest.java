@@ -2,10 +2,6 @@ package models;
 
 import org.junit.*;
 
-import play.mvc.*;
-import play.test.*;
-import play.libs.F.*;
-
 import static play.test.Helpers.*;
 import static org.fest.assertions.Assertions.*;
 
@@ -33,13 +29,13 @@ public class UserTest {
     }
 
     @Test
-    public void tryConnectAsUser() {
+    public void tryAuthenticateUser() {
         // Create a new user and save it
         new User("Ted", "foobar").save();
 
         // Test
-        assertThat(User.connect("Ted", "foobar")).isNotNull();
-        assertThat(User.connect("Ted", "badPassword")).isNull();
-        assertThat(User.connect("Bob", "foobar")).isNull();
+        assertThat(User.authenticate("Ted", "foobar")).isNotNull();
+        assertThat(User.authenticate("Ted", "badPassword")).isNull();
+        assertThat(User.authenticate("Bob", "foobar")).isNull();
     }
 }
